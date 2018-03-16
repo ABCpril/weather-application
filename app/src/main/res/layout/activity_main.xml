@@ -10,6 +10,7 @@
     tools:context="mg.studio.weatherappdesign.MainActivity">
 
     <TextView
+        android:id="@+id/weekView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
@@ -133,6 +134,18 @@
                     android:textColor="@android:color/white"
                     android:textSize="22sp" />
 
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="226dp"
+                    android:layout_marginRight="226dp"
+                    android:onClick="btnRefresh"
+                    app:srcCompat="@drawable/refresh" />
+
 
             </RelativeLayout>
 
@@ -176,10 +189,11 @@
                 app:srcCompat="@drawable/rainy_small" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="mon"
+                android:background="@drawable/blueround"
                 android:textAllCaps="true"
                 android:textColor="#909090" />
         </LinearLayout>
@@ -197,10 +211,11 @@
                 app:srcCompat="@drawable/partly_sunny_small" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="tue"
+                android:background="@drawable/whiteround"
                 android:textAllCaps="true"
                 android:textColor="#909090" />
         </LinearLayout>
@@ -218,10 +233,11 @@
                 app:srcCompat="@drawable/windy_small" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="thu"
+                android:background="@drawable/whiteround"
                 android:textAllCaps="true"
                 android:textColor="#909090" />
         </LinearLayout>
@@ -239,10 +255,11 @@
                 app:srcCompat="@drawable/sunny_small" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="fri"
+                android:background="@drawable/whiteround"
                 android:textAllCaps="true"
                 android:textColor="#909090" />
         </LinearLayout>

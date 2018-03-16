@@ -14,6 +14,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +30,46 @@ public class MainActivity extends AppCompatActivity {
         new DownloadUpdate().execute();
     }
 
+    public void btnRefresh(View view) {
+        new DownloadUpdate().execute();
+        ((TextView)findViewById(R.id.tv_date)).setText(getTime());
+        ((TextView)findViewById(R.id.weekView)).setText(getWeek());
+    }
+
+    public String getTime(){
+        final Calendar c = Calendar.getInstance();
+        c.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));
+        String mYear = String.valueOf(c.get(Calendar.YEAR)); // 获取当前年份
+        String mMonth = String.valueOf(c.get(Calendar.MONTH) + 1);// 获取当前月份
+        String mDay = String.valueOf(c.get(Calendar.DAY_OF_MONTH));// 获取当前月份的日期号
+        String mHour = String.valueOf(c.get(Calendar.HOUR_OF_DAY));//时
+        String mMinute = String.valueOf(c.get(Calendar.MINUTE));//分
+        String mSecond = String.valueOf(c.get(Calendar.SECOND));//秒
+
+        return mMonth +"/"+ mDay+"/"+mYear;
+    }
+
+    public String getWeek(){
+        final Calendar c = Calendar.getInstance();
+        c.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));
+        String mWay = String.valueOf(c.get(Calendar.DAY_OF_WEEK));
+        if("1".equals(mWay)){
+            return "SUNDAY";
+        }else if("2".equals(mWay)){
+            return "MONDAY";
+        }else if("3".equals(mWay)){
+            return "TUESDAY";
+        }else if("4".equals(mWay)){
+            return "WEDNESDAY";
+        }else if("5".equals(mWay)){
+            return "THURSDAY";
+        }else if("6".equals(mWay)){
+            return "FRIDAY";
+        }else if("7".equals(mWay)){
+            return "SATURDAY";
+        }
+        return mWay;
+    }
 
     private class DownloadUpdate extends AsyncTask<String, Void, String> {
 
