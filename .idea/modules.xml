@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://F:\WeatherProject\weather-application\Github_Weather_Application.iml" filepath="F:\WeatherProject\weather-application\Github_Weather_Application.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://F:\WeatherProject\weather-application\app\app.iml" filepath="F:\WeatherProject\weather-application\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/weather-application.iml" filepath="$PROJECT_DIR$/weather-application.iml" />
     </modules>
   </component>
